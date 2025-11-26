@@ -1,20 +1,14 @@
 <?php
 
-/** @var yii\web\View $this */
-/** @var string $content */
-
 use app\assets\AppAsset;
 use yii\helpers\Html;
-use yii\helpers\Url;
 
 AppAsset::register($this);
 
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
 $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no']);
-$this->registerMetaTag(['name' => 'description', 'content' => $this->params['meta_description'] ?? '']);
-$this->registerMetaTag(['name' => 'keywords', 'content' => $this->params['meta_keywords'] ?? '']);
-$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/assets/images/favicon.svg')]);
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/template-assets/images/favicon.svg')]);
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
@@ -25,37 +19,30 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
-    <!-- Template CSS - PERBAIKAN PATH -->
-    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/assets/fonts/tabler-icons.min.css" />
-    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/assets/fonts/feather.css" />
-    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/assets/fonts/fontawesome.css" />
-    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/assets/fonts/material.css" />
-    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/assets/css/style.css" id="main-style-link" />
-    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/assets/css/style-preset.css" />
-    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/css/custom-theme.css" />
+    <!-- Template CSS -->
+    <!-- Template CSS -->
+<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/tabler-icons.min.css" />
+<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/feather.css" />
+<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/fontawesome.css" />
+<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/material.css" />
+<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/css/style.css" id="main-style-link" />
+<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/css/style-preset.css" />
+<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/css/custom-theme.css" />
     
     <?php $this->head() ?>
 </head>
 <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
 <?php $this->beginBody() ?>
 
-<!-- [ Pre-loader ] start -->
 <div class="loader-bg">
   <div class="pc-loader">
     <div class="loader-fill"></div>
   </div>
 </div>
-<!-- [ Pre-loader ] End -->
 
-<!-- [ Sidebar Menu ] start -->
 <?= $this->render('_sidebar') ?>
-<!-- [ Sidebar Menu ] end -->
-
-<!-- [ Header Topbar ] start -->
 <?= $this->render('_header') ?>
-<!-- [ Header Topbar ] end -->
 
-<!-- [ Main Content ] start -->
 <div class="pc-container">
   <div class="pc-content">
     
@@ -77,15 +64,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     
   </div>
 </div>
-<!-- [ Main Content ] end -->
 
-<!-- Required Js - PERBAIKAN PATH -->
-<script src="<?= Yii::getAlias('@web') ?>/assets/js/plugins/popper.min.js"></script>
-<script src="<?= Yii::getAlias('@web') ?>/assets/js/plugins/simplebar.min.js"></script>
-<script src="<?= Yii::getAlias('@web') ?>/assets/js/plugins/bootstrap.min.js"></script>
-<script src="<?= Yii::getAlias('@web') ?>/assets/js/fonts/custom-font.js"></script>
-<script src="<?= Yii::getAlias('@web') ?>/assets/js/pcoded.js"></script>
-<script src="<?= Yii::getAlias('@web') ?>/assets/js/plugins/feather.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/popper.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/simplebar.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/bootstrap.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/template-assets/js/fonts/custom-font.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/template-assets/js/pcoded.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/feather.min.js"></script>
 
 <script>
   layout_change('light');

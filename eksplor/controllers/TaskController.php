@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use app\models\Task;
 use app\models\TaskSearch;
 use yii\web\Controller;
@@ -22,7 +23,7 @@ class TaskController extends Controller
             parent::behaviors(),
             [
                 'verbs' => [
-                    'class' => VerbFilter::className(),
+                    'class' => VerbFilter::class,
                     'actions' => [
                         'delete' => ['POST'],
                     ],
@@ -38,12 +39,21 @@ class TaskController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new TaskSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
-
+        // Ambil semua tasks
+        $tasks = Task::find()->orderBy(['created_at' => SORT_DESC])->all();
+        
+        // Hitung statistik
+        $totalTasks = Task::find()->count();
+        $pendingTasks = Task::find()->where(['status' => 'pending'])->count();
+        $completedTasks = Task::find()->where(['status' => 'completed'])->count();
+        $highPriorityTasks = Task::find()->where(['priority' => 'high'])->count();
+        
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'tasks' => $tasks,
+            'totalTasks' => $totalTasks,
+            'pendingTasks' => $pendingTasks,
+            'completedTasks' => $completedTasks,
+            'highPriorityTasks' => $highPriorityTasks,
         ]);
     }
 
@@ -71,7 +81,8 @@ class TaskController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                Yii::$app->session->setFlash('success', 'Task created successfully!');
+                return $this->redirect(['index']);
             }
         } else {
             $model->loadDefaultValues();
@@ -94,7 +105,8 @@ class TaskController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->session->setFlash('success', 'Task updated successfully!');
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
@@ -112,6 +124,7 @@ class TaskController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+        Yii::$app->session->setFlash('success', 'Task deleted successfully!');
 
         return $this->redirect(['index']);
     }

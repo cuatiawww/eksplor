@@ -34,7 +34,11 @@
       <ul class="pc-navbar">
         <li class="pc-item pc-caption">
           <label>Navigation</label>
+          <i class="ph-duotone ph-gauge"></i>
+          <span>Main Menu</span>
         </li>
+        
+        <!-- Dashboard -->
         <li class="pc-item" data-page="index">
           <a href="index.html" class="pc-link">
             <span class="pc-micon">
@@ -43,20 +47,70 @@
             <span class="pc-mtext">DASHBOARD</span>
           </a>
         </li>
-        <li class="pc-item" data-page="todo-list">
-          <a href="todo-list.html" class="pc-link">
+        
+        <!-- TO-DO LIST dengan Dropdown -->
+        <li class="pc-item pc-hasmenu" data-page="todo-list">
+          <a href="#!" class="pc-link">
             <span class="pc-micon">
               <i class="ph-duotone ph-list-checks"></i>
             </span>
             <span class="pc-mtext">TO-DO LIST</span>
+            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
           </a>
+          <ul class="pc-submenu">
+            <li class="pc-item"><a class="pc-link" href="todo-list.html">All Tasks</a></li>
+            <li class="pc-item"><a class="pc-link" href="todo-list.html">Pending</a></li>
+            <li class="pc-item"><a class="pc-link" href="todo-list.html">Completed</a></li>
+            <li class="pc-item"><a class="pc-link" href="todo-list.html">High Priority</a></li>
+          </ul>
         </li>
-        <li class="pc-item" data-page="daily-notes">
-          <a href="daily-notes.html" class="pc-link">
+        
+        <!-- DAILY NOTES dengan Dropdown -->
+        <li class="pc-item pc-hasmenu" data-page="daily-notes">
+          <a href="#!" class="pc-link">
             <span class="pc-micon">
               <i class="ph-duotone ph-notebook"></i>
             </span>
             <span class="pc-mtext">DAILY NOTES</span>
+            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+          </a>
+          <ul class="pc-submenu">
+            <li class="pc-item"><a class="pc-link" href="daily-notes.html">Write Note</a></li>
+            <li class="pc-item"><a class="pc-link" href="daily-notes.html">All Notes</a></li>
+            <li class="pc-item"><a class="pc-link" href="daily-notes.html">This Week</a></li>
+            <li class="pc-item"><a class="pc-link" href="daily-notes.html">This Month</a></li>
+          </ul>
+        </li>
+
+        <!-- Section baru: Archive/Settings -->
+        <li class="pc-item pc-caption">
+          <label>More</label>
+          <i class="ph-duotone ph-folder-open"></i>
+          <span>Additional Features</span>
+        </li>
+
+        <!-- Archive dengan Dropdown -->
+        <li class="pc-item pc-hasmenu">
+          <a href="#!" class="pc-link">
+            <span class="pc-micon">
+              <i class="ph-duotone ph-archive-box"></i>
+            </span>
+            <span class="pc-mtext">ARCHIVE</span>
+            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+          </a>
+          <ul class="pc-submenu">
+            <li class="pc-item"><a class="pc-link" href="#!">Archived Tasks</a></li>
+            <li class="pc-item"><a class="pc-link" href="#!">Archived Notes</a></li>
+          </ul>
+        </li>
+
+        <!-- Settings tanpa Dropdown -->
+        <li class="pc-item">
+          <a href="#!" class="pc-link">
+            <span class="pc-micon">
+              <i class="ph-duotone ph-gear"></i>
+            </span>
+            <span class="pc-mtext">SETTINGS</span>
           </a>
         </li>
       </ul>

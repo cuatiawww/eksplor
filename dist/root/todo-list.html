@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <!-- [Head] start -->
+  <head>
+    <title>To-Do List | Ruang Yosua</title>
+    <!-- [Meta] -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [Favicon] icon -->
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon" />
+    <!-- [Google Font : Open Sans] -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- [Tabler Icons] https://tablericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" />
+    <!-- [Feather Icons] https://feathericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/feather.css" />
+    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/fontawesome.css" />
+    <!-- [Material Icons] https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/material.css" />
+    <!-- [Template CSS Files] -->
+    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" />
+    <link rel="stylesheet" href="../assets/css/style-preset.css" />
+    <!-- [Custom Theme - Ruang Yosua Orange] -->
+    <link rel="stylesheet" href="custom-theme.css" />
+  </head>
+  <!-- [Head] end -->
+  <!-- [Body] Start -->
+
+  <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+      <div class="pc-loader">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ Sidebar Menu ] start -->
+    <div id="sidebar-container"></div>
+    <!-- [ Sidebar Menu ] end -->
+
+    <!-- [ Header Topbar ] start -->
+    <div id="header-container"></div>
+    <!-- [ Header Topbar ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item" aria-current="page">To-Do List</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h2 class="mb-0">MY TASKS</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+
+        <!-- [ Main Content ] start -->
+        <div class="row">
+          <!-- Add New Task Card -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5><i class="ph-duotone ph-plus-circle me-2"></i>Add New Task</h5>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-8 mb-3">
+                      <input type="text" class="form-control" placeholder="What needs to be done?" required />
+                    </div>
+                    <div class="col-md-2 mb-3">
+                      <select class="form-select">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                      <button type="submit" class="btn btn-primary w-100">
+                        <i class="ph-duotone ph-plus me-1"></i>Add Task
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Task List - Pending -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5><i class="ph-duotone ph-clock me-2"></i>Pending Tasks (5)</h5>
+              </div>
+              <div class="card-body">
+                <div class="list-group list-group-flush">
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-primary" type="checkbox" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1">Belajar membuat database MySQL</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-warning">Medium</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> Today</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-primary me-1">
+                          <i class="ph-duotone ph-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-primary" type="checkbox" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1">Meeting dengan tim project</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-danger">High</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> Today, 14:00</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-primary me-1">
+                          <i class="ph-duotone ph-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-primary" type="checkbox" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1">Beli groceries untuk minggu ini</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-secondary">Low</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> Tomorrow</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-primary me-1">
+                          <i class="ph-duotone ph-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-primary" type="checkbox" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1">Review code dari Pull Request #123</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-warning">Medium</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> Dec 28</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-primary me-1">
+                          <i class="ph-duotone ph-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-primary" type="checkbox" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1">Update dokumentasi API project</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-secondary">Low</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> Next Week</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-primary me-1">
+                          <i class="ph-duotone ph-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Task List - Completed -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5><i class="ph-duotone ph-check-circle me-2 text-success"></i>Completed Tasks (3)</h5>
+              </div>
+              <div class="card-body">
+                <div class="list-group list-group-flush">
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-success" type="checkbox" checked />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1 text-decoration-line-through text-muted">Setup development environment</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-success">Completed</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> Yesterday</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-success" type="checkbox" checked />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1 text-decoration-line-through text-muted">Install template Flatable</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-success">Completed</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> 2 days ago</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-group-item">
+                    <div class="d-flex align-items-center">
+                      <div class="form-check flex-shrink-0">
+                        <input class="form-check-input input-success" type="checkbox" checked />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1 text-decoration-line-through text-muted">Buat konsep Ruang Yosua</h6>
+                        <p class="text-muted mb-0">
+                          <span class="badge bg-light-success">Completed</span>
+                          <span class="ms-2"><i class="ph-duotone ph-calendar"></i> Today</span>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button class="btn btn-sm btn-light-danger">
+                          <i class="ph-duotone ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ Main Content ] end -->
+      </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Required Js -->
+    <script src="../assets/js/plugins/popper.min.js"></script>
+    <script src="../assets/js/plugins/simplebar.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap.min.js"></script>
+    <script src="../assets/js/fonts/custom-font.js"></script>
+    <script src="../assets/js/pcoded.js"></script>
+    <script src="../assets/js/plugins/feather.min.js"></script>
+
+    <!-- Component Loader -->
+    <script src="components/load-components.js"></script>
+
+    <script>
+      layout_change('light');
+    </script>
+  </body>
+</html>

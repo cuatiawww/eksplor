@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <!-- [Head] start -->
+  <head>
+    <title>Dashboard | Ruang Yosua</title>
+    <!-- [Meta] -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [Favicon] icon -->
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon" />
+    <!-- [Google Font : Open Sans] -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- [Tabler Icons] https://tablericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" />
+    <!-- [Feather Icons] https://feathericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/feather.css" />
+    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/fontawesome.css" />
+    <!-- [Material Icons] https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/material.css" />
+    <!-- [Template CSS Files] -->
+    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" />
+    <link rel="stylesheet" href="../assets/css/style-preset.css" />
+    <!-- [Custom Theme - Ruang Yosua Orange] -->
+    <link rel="stylesheet" href="custom-theme.css" />
+  </head>
+  <!-- [Head] end -->
+  <!-- [Body] Start -->
+
+  <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+      <div class="pc-loader">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ Sidebar Menu ] start -->
+    <div id="sidebar-container"></div>
+    <!-- [ Sidebar Menu ] end -->
+
+    <!-- [ Header Topbar ] start -->
+    <div id="header-container"></div>
+    <!-- [ Header Topbar ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item" aria-current="page">Dashboard</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h2 class="mb-0">DASHBOARD</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+
+        <!-- [ Search Bar ] start -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="ph-duotone ph-magnifying-glass"></i></span>
+                  <input type="text" class="form-control" placeholder="Search tasks, notes, or anything..." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ Search Bar ] end -->
+
+        <!-- [ Main Content ] start -->
+        <div class="row">
+          <!-- Welcome Card -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <h3>Selamat Datang di Rumah! 👋</h3>
+                    <p class="text-muted mb-0">
+                      Tempat untuk mengatur to-do list dan mencatat cerita harian kamu.
+                      Kelola task, tulis jurnal, dan pantau produktivitas kamu disini.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card bg-primary-dark dashnum-card text-white overflow-hidden">
+              <span class="round small"></span>
+              <span class="round big"></span>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <div class="avtar avtar-lg">
+                      <i class="ph-duotone ph-list-checks text-white f-26"></i>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">Total Tasks</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="d-block f-34 f-w-500 my-2">24</span>
+                <p class="mb-0 opacity-50">
+                  <span class="text-white">5 pending</span> today
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <div class="card bg-success-dark dashnum-card text-white overflow-hidden">
+              <span class="round small"></span>
+              <span class="round big"></span>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <div class="avtar avtar-lg">
+                      <i class="ph-duotone ph-check-circle text-white f-26"></i>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">Completed</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="d-block f-34 f-w-500 my-2">18</span>
+                <p class="mb-0 opacity-50">
+                  <span class="text-white">75%</span> completion rate
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <div class="card bg-warning-dark dashnum-card text-white overflow-hidden">
+              <span class="round small"></span>
+              <span class="round big"></span>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <div class="avtar avtar-lg">
+                      <i class="ph-duotone ph-notebook text-white f-26"></i>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">Notes</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="d-block f-34 f-w-500 my-2">12</span>
+                <p class="mb-0 opacity-50">
+                  <span class="text-white">3 new</span> this week
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <div class="card bg-danger-dark dashnum-card text-white overflow-hidden">
+              <span class="round small"></span>
+              <span class="round big"></span>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <div class="avtar avtar-lg">
+                      <i class="ph-duotone ph-fire text-white f-26"></i>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">Streak</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="d-block f-34 f-w-500 my-2">7 Days</span>
+                <p class="mb-0 opacity-50">
+                  <span class="text-white">Keep going!</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5>Quick Actions</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <a href="todo-list.html" class="btn btn-primary w-100 mb-2">
+                      <i class="ph-duotone ph-plus-circle me-2"></i>Add New Task
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="daily-notes.html" class="btn btn-warning w-100 mb-2">
+                      <i class="ph-duotone ph-note-pencil me-2"></i>Write Today's Note
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="#!" class="btn btn-success w-100 mb-2">
+                      <i class="ph-duotone ph-calendar me-2"></i>View Calendar
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ Main Content ] end -->
+      </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Required Js -->
+    <script src="../assets/js/plugins/popper.min.js"></script>
+    <script src="../assets/js/plugins/simplebar.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap.min.js"></script>
+    <script src="../assets/js/fonts/custom-font.js"></script>
+    <script src="../assets/js/pcoded.js"></script>
+    <script src="../assets/js/plugins/feather.min.js"></script>
+
+    <!-- Component Loader -->
+    <script src="components/load-components.js"></script>
+
+    <script>
+      layout_change('light');
+    </script>
+  </body>
+</html>

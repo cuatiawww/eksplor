@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <!-- [Head] start -->
+  <head>
+    <title>Daily Notes | Ruang Yosua</title>
+    <!-- [Meta] -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [Favicon] icon -->
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon" />
+    <!-- [Google Font : Open Sans] -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- [Tabler Icons] https://tablericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" />
+    <!-- [Feather Icons] https://feathericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/feather.css" />
+    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/fontawesome.css" />
+    <!-- [Material Icons] https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/material.css" />
+    <!-- [Template CSS Files] -->
+    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" />
+    <link rel="stylesheet" href="../assets/css/style-preset.css" />
+    <!-- [Custom Theme - Ruang Yosua Orange] -->
+    <link rel="stylesheet" href="custom-theme.css" />
+  </head>
+  <!-- [Head] end -->
+  <!-- [Body] Start -->
+
+  <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+      <div class="pc-loader">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ Sidebar Menu ] start -->
+    <div id="sidebar-container"></div>
+    <!-- [ Sidebar Menu ] end -->
+
+    <!-- [ Header Topbar ] start -->
+    <div id="header-container"></div>
+    <!-- [ Header Topbar ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item" aria-current="page">Daily Notes</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h2 class="mb-0">MY DAILY NOTES</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+
+        <!-- [ Main Content ] start -->
+        <div class="row">
+          <!-- Write New Note Card -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5><i class="ph-duotone ph-note-pencil me-2"></i>Write Today's Note</h5>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="noteTitle" class="form-label">Judul <span class="text-muted">(Optional)</span></label>
+                    <input type="text" class="form-control" id="noteTitle" placeholder="Judul catatan hari ini..." />
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label for="noteDate" class="form-label">Tanggal</label>
+                      <input type="date" class="form-control" id="noteDate" value="2025-01-26" />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="noteMood" class="form-label">Mood Hari Ini</label>
+                      <select class="form-select" id="noteMood">
+                        <option value="">Pilih mood...</option>
+                        <option value="very-happy">😄 Sangat Senang</option>
+                        <option value="happy">😊 Senang</option>
+                        <option value="neutral" selected>😐 Biasa Aja</option>
+                        <option value="sad">😢 Sedih</option>
+                        <option value="stressed">😫 Stress</option>
+                        <option value="excited">🤩 Excited</option>
+                        <option value="tired">😴 Capek</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="noteContent" class="form-label">Cerita Hari Ini</label>
+                    <textarea
+                      class="form-control"
+                      id="noteContent"
+                      rows="10"
+                      placeholder="Tulis cerita, refleksi, atau hal menarik yang terjadi hari ini...&#10;&#10;Contoh:&#10;- Apa yang membuatmu bahagia hari ini?&#10;- Apa yang kamu pelajari?&#10;- Ada tantangan apa yang kamu hadapi?&#10;- Apa yang ingin kamu capai besok?"
+                    ></textarea>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="noteTags" class="form-label">Tags <span class="text-muted">(Pisahkan dengan koma)</span></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="noteTags"
+                      placeholder="diary, reflection, idea, goals, grateful"
+                    />
+                    <small class="text-muted">Contoh: diary, pekerjaan, keluarga, belajar</small>
+                  </div>
+
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="reset" class="btn btn-light">Clear</button>
+                    <button type="submit" class="btn btn-primary">
+                      <i class="ph-duotone ph-floppy-disk me-1"></i>Save Note
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Notes List -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5><i class="ph-duotone ph-book-open me-2"></i>Recent Notes</h5>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-sm btn-light-primary active">All</button>
+                  <button type="button" class="btn btn-sm btn-light-primary">This Week</button>
+                  <button type="button" class="btn btn-sm btn-light-primary">This Month</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <!-- Note Card 1 -->
+                  <div class="col-md-6 mb-3">
+                    <div class="card border">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                          <div>
+                            <h6 class="mb-1">Hari yang Produktif!</h6>
+                            <p class="text-muted mb-0">
+                              <small><i class="ph-duotone ph-calendar"></i> 26 January 2025</small>
+                            </p>
+                          </div>
+                          <span class="badge bg-light-success" style="font-size: 1.2rem;">😊</span>
+                        </div>
+                        <p class="mb-2">
+                          Hari ini berhasil menyelesaikan setup development environment dan mulai belajar konsep database.
+                          Senang bisa membuat progress yang bagus...
+                        </p>
+                        <div class="mb-2">
+                          <span class="badge bg-light-primary me-1">#diary</span>
+                          <span class="badge bg-light-secondary me-1">#belajar</span>
+                          <span class="badge bg-light-info">#productive</span>
+                        </div>
+                        <div class="d-flex justify-content-end gap-1">
+                          <button class="btn btn-sm btn-light-primary">
+                            <i class="ph-duotone ph-pencil"></i>
+                          </button>
+                          <button class="btn btn-sm btn-light-danger">
+                            <i class="ph-duotone ph-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Note Card 2 -->
+                  <div class="col-md-6 mb-3">
+                    <div class="card border">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                          <div>
+                            <h6 class="mb-1">Refleksi Mingguan</h6>
+                            <p class="text-muted mb-0">
+                              <small><i class="ph-duotone ph-calendar"></i> 24 January 2025</small>
+                            </p>
+                          </div>
+                          <span class="badge bg-light-warning" style="font-size: 1.2rem;">😐</span>
+                        </div>
+                        <p class="mb-2">
+                          Minggu ini banyak belajar hal baru. Ada tantangan di project tapi Alhamdulillah bisa diselesaikan dengan baik.
+                          Next week mau fokus ke backend development...
+                        </p>
+                        <div class="mb-2">
+                          <span class="badge bg-light-primary me-1">#reflection</span>
+                          <span class="badge bg-light-secondary me-1">#weekly</span>
+                          <span class="badge bg-light-success">#goals</span>
+                        </div>
+                        <div class="d-flex justify-content-end gap-1">
+                          <button class="btn btn-sm btn-light-primary">
+                            <i class="ph-duotone ph-pencil"></i>
+                          </button>
+                          <button class="btn btn-sm btn-light-danger">
+                            <i class="ph-duotone ph-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Note Card 3 -->
+                  <div class="col-md-6 mb-3">
+                    <div class="card border">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                          <div>
+                            <h6 class="mb-1">Ide Project Baru</h6>
+                            <p class="text-muted mb-0">
+                              <small><i class="ph-duotone ph-calendar"></i> 22 January 2025</small>
+                            </p>
+                          </div>
+                          <span class="badge bg-light-info" style="font-size: 1.2rem;">🤩</span>
+                        </div>
+                        <p class="mb-2">
+                          Kepikiran ide untuk bikin aplikasi "Ruang Yosua" - personal task manager dan daily journal.
+                          Konsepnya simpel tapi berguna untuk tracking produktivitas dan refleksi harian...
+                        </p>
+                        <div class="mb-2">
+                          <span class="badge bg-light-warning me-1">#idea</span>
+                          <span class="badge bg-light-info me-1">#project</span>
+                          <span class="badge bg-light-success">#planning</span>
+                        </div>
+                        <div class="d-flex justify-content-end gap-1">
+                          <button class="btn btn-sm btn-light-primary">
+                            <i class="ph-duotone ph-pencil"></i>
+                          </button>
+                          <button class="btn btn-sm btn-light-danger">
+                            <i class="ph-duotone ph-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Note Card 4 -->
+                  <div class="col-md-6 mb-3">
+                    <div class="card border">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                          <div>
+                            <h6 class="mb-1">Grateful Today</h6>
+                            <p class="text-muted mb-0">
+                              <small><i class="ph-duotone ph-calendar"></i> 20 January 2025</small>
+                            </p>
+                          </div>
+                          <span class="badge bg-light-success" style="font-size: 1.2rem;">😄</span>
+                        </div>
+                        <p class="mb-2">
+                          Bersyukur hari ini untuk:
+                          - Kesehatan yang baik
+                          - Progress di project
+                          - Dukungan dari keluarga
+                          - Waktu untuk belajar hal baru
+                        </p>
+                        <div class="mb-2">
+                          <span class="badge bg-light-success me-1">#grateful</span>
+                          <span class="badge bg-light-primary me-1">#diary</span>
+                          <span class="badge bg-light-info">#positivity</span>
+                        </div>
+                        <div class="d-flex justify-content-end gap-1">
+                          <button class="btn btn-sm btn-light-primary">
+                            <i class="ph-duotone ph-pencil"></i>
+                          </button>
+                          <button class="btn btn-sm btn-light-danger">
+                            <i class="ph-duotone ph-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ Main Content ] end -->
+      </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Required Js -->
+    <script src="../assets/js/plugins/popper.min.js"></script>
+    <script src="../assets/js/plugins/simplebar.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap.min.js"></script>
+    <script src="../assets/js/fonts/custom-font.js"></script>
+    <script src="../assets/js/pcoded.js"></script>
+    <script src="../assets/js/plugins/feather.min.js"></script>
+
+    <!-- Component Loader -->
+    <script src="components/load-components.js"></script>
+
+    <script>
+      layout_change('light');
+    </script>
+  </body>
+</html>

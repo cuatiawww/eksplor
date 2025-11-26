@@ -1,0 +1,23 @@
+/* ===================================
+   Dashboard Card Colors - Flatable Template
+   =================================== */
+
+/* Primary Card - Blue */
+.card.bg-primary-dark {
+  background: linear-gradient(135deg, #4680ff 0%, #4680ff 100%) !important;
+}
+
+/* Success Card - Green */
+.card.bg-success-dark {
+  background: linear-gradient(135deg, #2ca87f 0%, #2ca87f 100%) !important;
+}
+
+/* Warning Card - Orange */
+.card.bg-warning-dark {
+  background: linear-gradient(135deg, #f4c22b 0%, #f4c22b 100%) !important;
+}
+
+/* Danger Card - Red */
+.card.bg-danger-dark {
+  background: linear-gradient(135deg, #dc2626 0%, #dc2626 100%) !important;
+}

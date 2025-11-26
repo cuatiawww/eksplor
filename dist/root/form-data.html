@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <!-- [Head] start -->
+  <head>
+    <title>Input Form Data | Learning Flatable Template</title>
+    <!-- [Meta] -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [Favicon] icon -->
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon" />
+    <!-- [Google Font : Open Sans] -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- [Tabler Icons] https://tablericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" />
+    <!-- [Feather Icons] https://feathericons.com -->
+    <link rel="stylesheet" href="../assets/fonts/feather.css" />
+    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/fontawesome.css" />
+    <!-- [Material Icons] https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="../assets/fonts/material.css" />
+    <!-- [Template CSS Files] -->
+    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" />
+    <link rel="stylesheet" href="../assets/css/style-preset.css" />
+  </head>
+  <!-- [Head] end -->
+  <!-- [Body] Start -->
+
+  <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+      <div class="pc-loader">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ Sidebar Menu ] start -->
+    <nav class="pc-sidebar">
+      <div class="navbar-wrapper">
+        <div class="m-header">
+          <a href="index.html" class="b-brand text-primary">
+            <img src="../assets/images/logo-white.svg" alt="logo image" class="logo-lg" />
+            <span class="badge bg-primary rounded-pill ms-2 theme-version">Learning</span>
+          </a>
+        </div>
+
+        <div class="card pc-user-card">
+          <div class="card-body">
+            <div class="nav-user-image">
+              <a data-bs-toggle="collapse" href="#navuserlink">
+                <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="user-avtar rounded-circle" />
+              </a>
+            </div>
+            <div class="pc-user-collpsed collapse" id="navuserlink">
+              <h4 class="mb-0">User Demo</h4>
+              <span>Administrator</span>
+              <ul>
+                <li>
+                  <a class="pc-user-links">
+                    <i class="ph-duotone ph-user"></i>
+                    <span>My Account</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="pc-user-links">
+                    <i class="ph-duotone ph-gear"></i>
+                    <span>Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="login.html" class="pc-user-links">
+                    <i class="ph-duotone ph-power"></i>
+                    <span>Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-content">
+          <ul class="pc-navbar">
+            <li class="pc-item pc-caption">
+              <label>Navigation</label>
+            </li>
+            <li class="pc-item">
+              <a href="index.html" class="pc-link">
+                <span class="pc-micon">
+                  <i class="ph-duotone ph-gauge"></i>
+                </span>
+                <span class="pc-mtext">Dashboard</span>
+              </a>
+            </li>
+            <li class="pc-item">
+              <a href="sample-page.html" class="pc-link">
+                <span class="pc-micon">
+                  <i class="ph-duotone ph-desktop"></i>
+                </span>
+                <span class="pc-mtext">Sample Page</span>
+              </a>
+            </li>
+            <li class="pc-item active">
+              <a href="form-data.html" class="pc-link">
+                <span class="pc-micon">
+                  <i class="ph-duotone ph-textbox"></i>
+                </span>
+                <span class="pc-mtext">Input Form Data</span>
+              </a>
+            </li>
+            <li class="pc-item pc-caption">
+              <label>Pages</label>
+            </li>
+            <li class="pc-item">
+              <a href="login.html" class="pc-link">
+                <span class="pc-micon">
+                  <i class="ph-duotone ph-shield-checkered"></i>
+                </span>
+                <span class="pc-mtext">Login</span>
+              </a>
+            </li>
+            <li class="pc-item">
+              <a href="register.html" class="pc-link">
+                <span class="pc-micon">
+                  <i class="ph-duotone ph-user-plus"></i>
+                </span>
+                <span class="pc-mtext">Register</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- [ Sidebar Menu ] end -->
+
+    <!-- [ Header Topbar ] start -->
+    <header class="pc-header">
+      <div class="header-wrapper">
+        <!-- [Mobile Media Block] start -->
+        <div class="me-auto pc-mob-drp">
+          <ul class="list-unstyled">
+            <!-- ======= Menu collapse Icon ===== -->
+            <li class="pc-h-item pc-sidebar-collapse">
+              <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+                <i class="ph-duotone ph-list"></i>
+              </a>
+            </li>
+            <li class="pc-h-item pc-sidebar-popup">
+              <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+                <i class="ph-duotone ph-list"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- [Mobile Media Block end] -->
+        <div class="ms-auto">
+          <ul class="list-unstyled">
+            <li class="dropdown pc-h-item">
+              <a
+                class="pc-head-link dropdown-toggle arrow-none me-0"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <i class="ph-duotone ph-sun-dim"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+                <a href="#!" class="dropdown-item" onclick="layout_change('dark')">
+                  <i class="ph-duotone ph-moon"></i>
+                  <span>Dark</span>
+                </a>
+                <a href="#!" class="dropdown-item" onclick="layout_change('light')">
+                  <i class="ph-duotone ph-sun-dim"></i>
+                  <span>Light</span>
+                </a>
+                <a href="#!" class="dropdown-item" onclick="layout_change_default()">
+                  <i class="ph-duotone ph-cpu"></i>
+                  <span>Default</span>
+                </a>
+              </div>
+            </li>
+            <li class="dropdown pc-h-item header-user-profile">
+              <a
+                class="pc-head-link dropdown-toggle arrow-none me-0"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="user-avtar" />
+              </a>
+              <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
+                <div class="dropdown-header d-flex align-items-center justify-content-between">
+                  <h5 class="m-0">Profile</h5>
+                </div>
+                <div class="dropdown-body">
+                  <div class="profile-notification-scroll position-relative" style="max-height: calc(100vh - 225px)">
+                    <div class="d-flex mb-1">
+                      <div class="flex-shrink-0">
+                        <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="user-avtar wid-35" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-1">User Demo</h6>
+                        <span>demo@example.com</span>
+                      </div>
+                    </div>
+                    <hr class="border-secondary border-opacity-50" />
+                    <div class="card">
+                      <div class="card-body py-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <h5 class="mb-0 d-inline-flex align-items-center">
+                            <i class="ph-duotone ph-lock"></i> Settings
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="login.html" class="dropdown-item">
+                      <span>
+                        <i class="ph-duotone ph-power"></i>
+                        <span>Logout</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- [ Header Topbar ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item" aria-current="page">Input Form Data</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h2 class="mb-0">Input Form Data</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+
+        <!-- [ Main Content ] start -->
+        <div class="row">
+          <!-- Basic Form -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5>Form Input Data Pengguna</h5>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="firstName" class="form-label">Nama Depan <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="firstName" placeholder="Masukkan nama depan" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="lastName" class="form-label">Nama Belakang <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="lastName" placeholder="Masukkan nama belakang" required />
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="contoh@email.com" required />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Nomor Telepon</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="08xxxxxxxxxx" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Alamat</label>
+                    <textarea class="form-control" id="address" rows="3" placeholder="Masukkan alamat lengkap"></textarea>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="city" class="form-label">Kota</label>
+                      <input type="text" class="form-control" id="city" placeholder="Masukkan kota" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="postalCode" class="form-label">Kode Pos</label>
+                      <input type="text" class="form-control" id="postalCode" placeholder="xxxxx" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="country" class="form-label">Negara</label>
+                    <select class="form-select" id="country">
+                      <option selected disabled>Pilih negara...</option>
+                      <option value="id">Indonesia</option>
+                      <option value="my">Malaysia</option>
+                      <option value="sg">Singapore</option>
+                      <option value="th">Thailand</option>
+                      <option value="ph">Philippines</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" />
+                        <label class="form-check-label" for="male">Laki-laki</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" />
+                        <label class="form-check-label" for="female">Perempuan</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Hobi</label>
+                    <div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="reading" />
+                        <label class="form-check-label" for="reading">Membaca</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sports" />
+                        <label class="form-check-label" for="sports">Olahraga</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="music" />
+                        <label class="form-check-label" for="music">Musik</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="travel" />
+                        <label class="form-check-label" for="travel">Travel</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="bio" class="form-label">Biodata Singkat</label>
+                    <textarea class="form-control" id="bio" rows="4" placeholder="Ceritakan tentang diri Anda..."></textarea>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="terms" required />
+                      <label class="form-check-label" for="terms">
+                        Saya setuju dengan <a href="#!">syarat dan ketentuan</a> yang berlaku
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="reset" class="btn btn-light">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit Data</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Elements Examples -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5>Contoh Input Elements</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Input Text</label>
+                    <input type="text" class="form-control" placeholder="Text input" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Input with Icon</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="ph-duotone ph-user"></i></span>
+                      <input type="text" class="form-control" placeholder="Username" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Input Date</label>
+                    <input type="date" class="form-control" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Input Time</label>
+                    <input type="time" class="form-control" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Input Number</label>
+                    <input type="number" class="form-control" placeholder="0" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Input File</label>
+                    <input type="file" class="form-control" />
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <label class="form-label">Input Range</label>
+                    <input type="range" class="form-range" min="0" max="100" />
+                  </div>
+                  <div class="col-md-12 mb-0">
+                    <label class="form-label">Disabled Input</label>
+                    <input type="text" class="form-control" placeholder="Disabled input" disabled />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ Main Content ] end -->
+      </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Required Js -->
+    <script src="../assets/js/plugins/popper.min.js"></script>
+    <script src="../assets/js/plugins/simplebar.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap.min.js"></script>
+    <script src="../assets/js/fonts/custom-font.js"></script>
+    <script src="../assets/js/pcoded.js"></script>
+    <script src="../assets/js/plugins/feather.min.js"></script>
+
+    <script>
+      layout_change('light');
+    </script>
+  </body>
+</html>

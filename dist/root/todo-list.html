@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>To-Do List | Ruang Yosua</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" />
+    <link rel="stylesheet" href="../assets/fonts/feather.css" />
+    <link rel="stylesheet" href="../assets/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../assets/fonts/material.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" />
+    <link rel="stylesheet" href="../assets/css/style-preset.css" />
+    <link rel="stylesheet" href="custom-theme.css" />
+  </head>
+
+  <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+    <div class="loader-bg">
+      <div class="pc-loader">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+
+    <div id="sidebar-container"></div>
+    <div id="header-container"></div>
+
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- Breadcrumb -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-sm-auto">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item" aria-current="page">To-Do List</li>
+                </ul>
+                <div class="page-header-title">
+                  <h2 class="mb-0">MY TASKS</h2>
+                </div>
+              </div>
+              <div class="col-sm-auto">
+                <a href="add-task.html" class="btn btn-primary">
+                  <i class="ph-duotone ph-plus-circle me-2"></i>Add New Task
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tasks Table -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5>All Tasks</h5>
+              </div>
+              <div class="card-body table-border-style">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th style="width: 50px;">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" />
+                          </div>
+                        </th>
+                        <th>Task Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Deadline</th>
+                        <th>Task Type</th>
+                        <th>Reminder</th>
+                        <th>Tags</th>
+                        <th>Assigned</th>
+                        <th style="width: 120px;">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Example Row 1 -->
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input input-primary" type="checkbox" />
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0">Belajar membuat database MySQL</h6>
+                        </td>
+                        <td>
+                          <p class="text-muted mb-0 small">Setup MySQL server dan buat database pertama untuk aplikasi</p>
+                        </td>
+                        <td><span class="badge bg-light-info">Study</span></td>
+                        <td><span class="badge bg-light-warning">Medium</span></td>
+                        <td><span class="badge bg-light-secondary">Pending</span></td>
+                        <td><i class="ph-duotone ph-calendar me-1"></i>Today</td>
+                        <td>
+                          <span class="badge bg-light-danger me-1">Urgent</span>
+                          <span class="badge bg-light-warning">Important</span>
+                        </td>
+                        <td><span class="badge bg-light-primary">1 Day Before</span></td>
+                        <td>
+                          <span class="badge bg-light-secondary me-1">#database</span>
+                          <span class="badge bg-light-secondary">#mysql</span>
+                        </td>
+                        <td><i class="ph-duotone ph-check-circle text-success"></i> Me</td>
+                        <td>
+                          <a href="add-task.html" class="avtar avtar-xs btn-link-secondary">
+                            <i class="ph-duotone ph-pencil f-18"></i>
+                          </a>
+                          <a href="#!" class="avtar avtar-xs btn-link-danger">
+                            <i class="ph-duotone ph-trash f-18"></i>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <!-- Example Row 2 -->
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input input-primary" type="checkbox" />
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0">Meeting dengan tim project</h6>
+                        </td>
+                        <td>
+                          <p class="text-muted mb-0 small">Diskusi progress dan roadmap minggu depan dengan seluruh tim</p>
+                        </td>
+                        <td><span class="badge bg-light-primary">Work</span></td>
+                        <td><span class="badge bg-light-danger">High</span></td>
+                        <td><span class="badge bg-light-warning">In Progress</span></td>
+                        <td><i class="ph-duotone ph-calendar me-1"></i>Today, 14:00</td>
+                        <td>
+                          <span class="badge bg-light-danger">Urgent</span>
+                        </td>
+                        <td><span class="badge bg-light-primary">1 Hour Before</span></td>
+                        <td>
+                          <span class="badge bg-light-secondary me-1">#meeting</span>
+                          <span class="badge bg-light-secondary">#team</span>
+                        </td>
+                        <td><i class="ph-duotone ph-check-circle text-success"></i> Me</td>
+                        <td>
+                          <a href="add-task.html" class="avtar avtar-xs btn-link-secondary">
+                            <i class="ph-duotone ph-pencil f-18"></i>
+                          </a>
+                          <a href="#!" class="avtar avtar-xs btn-link-danger">
+                            <i class="ph-duotone ph-trash f-18"></i>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <!-- Example Row 3 -->
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input input-primary" type="checkbox" />
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0">Beli groceries untuk minggu ini</h6>
+                        </td>
+                        <td>
+                          <p class="text-muted mb-0 small">Sayur, buah, dan kebutuhan dapur lainnya</p>
+                        </td>
+                        <td><span class="badge bg-light-success">Personal</span></td>
+                        <td><span class="badge bg-light-secondary">Low</span></td>
+                        <td><span class="badge bg-light-secondary">Pending</span></td>
+                        <td><i class="ph-duotone ph-calendar me-1"></i>Tomorrow</td>
+                        <td>
+                          <span class="text-muted">-</span>
+                        </td>
+                        <td><span class="badge bg-light-secondary">No Reminder</span></td>
+                        <td>
+                          <span class="badge bg-light-secondary me-1">#shopping</span>
+                          <span class="badge bg-light-secondary">#groceries</span>
+                        </td>
+                        <td><i class="ph-duotone ph-check-circle text-success"></i> Me</td>
+                        <td>
+                          <a href="add-task.html" class="avtar avtar-xs btn-link-secondary">
+                            <i class="ph-duotone ph-pencil f-18"></i>
+                          </a>
+                          <a href="#!" class="avtar avtar-xs btn-link-danger">
+                            <i class="ph-duotone ph-trash f-18"></i>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <!-- Example Row 4 - Completed -->
+                      <tr class="table-active">
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input input-success" type="checkbox" checked />
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0 text-decoration-line-through text-muted">Setup development environment</h6>
+                        </td>
+                        <td>
+                          <p class="text-muted mb-0 small text-decoration-line-through">Install VS Code, Node.js, dan Git untuk development</p>
+                        </td>
+                        <td><span class="badge bg-light-primary">Work</span></td>
+                        <td><span class="badge bg-light-warning">Medium</span></td>
+                        <td><span class="badge bg-light-success">Completed</span></td>
+                        <td><i class="ph-duotone ph-calendar me-1"></i>Yesterday</td>
+                        <td>
+                          <span class="badge bg-light-warning">Important</span>
+                        </td>
+                        <td><span class="badge bg-light-secondary">No Reminder</span></td>
+                        <td>
+                          <span class="badge bg-light-secondary me-1">#setup</span>
+                          <span class="badge bg-light-secondary">#dev</span>
+                        </td>
+                        <td><i class="ph-duotone ph-check-circle text-success"></i> Me</td>
+                        <td>
+                          <a href="#!" class="avtar avtar-xs btn-link-danger">
+                            <i class="ph-duotone ph-trash f-18"></i>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <!-- Example Row 5 -->
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input input-primary" type="checkbox" />
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0">Review code dari Pull Request #123</h6>
+                        </td>
+                        <td>
+                          <p class="text-muted mb-0 small">Check code quality, testing coverage, dan best practices</p>
+                        </td>
+                        <td><span class="badge bg-light-primary">Work</span></td>
+                        <td><span class="badge bg-light-warning">Medium</span></td>
+                        <td><span class="badge bg-light-secondary">Pending</span></td>
+                        <td><i class="ph-duotone ph-calendar me-1"></i>Dec 28</td>
+                        <td>
+                          <span class="badge bg-light-warning">Important</span>
+                        </td>
+                        <td><span class="badge bg-light-primary">1 Day Before</span></td>
+                        <td>
+                          <span class="badge bg-light-secondary me-1">#code-review</span>
+                          <span class="badge bg-light-secondary">#testing</span>
+                        </td>
+                        <td><i class="ph-duotone ph-check-circle text-success"></i> Me</td>
+                        <td>
+                          <a href="add-task.html" class="avtar avtar-xs btn-link-secondary">
+                            <i class="ph-duotone ph-pencil f-18"></i>
+                          </a>
+                          <a href="#!" class="avtar avtar-xs btn-link-danger">
+                            <i class="ph-duotone ph-trash f-18"></i>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <!-- Example Row 6 -->
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input input-primary" type="checkbox" />
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0">Olahraga pagi</h6>
+                        </td>
+                        <td>
+                          <p class="text-muted mb-0 small">Jogging 30 menit di taman</p>
+                        </td>
+                        <td><span class="badge bg-light-danger">Health</span></td>
+                        <td><span class="badge bg-light-warning">Medium</span></td>
+                        <td><span class="badge bg-light-secondary">Pending</span></td>
+                        <td><i class="ph-duotone ph-calendar me-1"></i>Daily</td>
+                        <td>
+                          <span class="badge bg-light-info">Recurring</span>
+                        </td>
+                        <td><span class="badge bg-light-secondary">No Reminder</span></td>
+                        <td>
+                          <span class="badge bg-light-secondary me-1">#health</span>
+                          <span class="badge bg-light-secondary">#sport</span>
+                        </td>
+                        <td><i class="ph-duotone ph-check-circle text-success"></i> Me</td>
+                        <td>
+                          <a href="add-task.html" class="avtar avtar-xs btn-link-secondary">
+                            <i class="ph-duotone ph-pencil f-18"></i>
+                          </a>
+                          <a href="#!" class="avtar avtar-xs btn-link-danger">
+                            <i class="ph-duotone ph-trash f-18"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/plugins/popper.min.js"></script>
+    <script src="../assets/js/plugins/simplebar.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap.min.js"></script>
+    <script src="../assets/js/fonts/custom-font.js"></script>
+    <script src="../assets/js/pcoded.js"></script>
+    <script src="../assets/js/plugins/feather.min.js"></script>
+    <script src="components/load-components.js"></script>
+
+    <script>
+      layout_change('light');
+    </script>
+  </body>
+</html>

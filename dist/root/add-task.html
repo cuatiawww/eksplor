@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Add New Task | Ruang Yosua</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" />
+    <link rel="stylesheet" href="../assets/fonts/feather.css" />
+    <link rel="stylesheet" href="../assets/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../assets/fonts/material.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" />
+    <link rel="stylesheet" href="../assets/css/style-preset.css" />
+    <link rel="stylesheet" href="custom-theme.css" />
+  </head>
+
+  <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+    <div class="loader-bg">
+      <div class="pc-loader">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+
+    <div id="sidebar-container"></div>
+    <div id="header-container"></div>
+
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- Breadcrumb -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="todo-list.html">To-Do List</a></li>
+                  <li class="breadcrumb-item" aria-current="page">Add Task</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h2 class="mb-0">ADD NEW TASK</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Add Task -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5><i class="ph-duotone ph-plus-circle me-2"></i>Task Information</h5>
+              </div>
+              <div class="card-body">
+                <form>
+                  <!-- Task Title -->
+                  <div class="mb-3">
+                    <label for="taskTitle" class="form-label">Task Title <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="taskTitle" placeholder="What needs to be done?" required />
+                  </div>
+
+                  <!-- Task Description -->
+                  <div class="mb-3">
+                    <label for="taskDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="taskDescription" rows="4" placeholder="Add more details about this task..."></textarea>
+                  </div>
+
+                  <!-- Row: Priority & Status -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="taskPriority" class="form-label">Priority <span class="text-danger">*</span></label>
+                      <select class="form-select" id="taskPriority" required>
+                        <option value="">Select priority...</option>
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label for="taskStatus" class="form-label">Status</label>
+                      <select class="form-select" id="taskStatus">
+                        <option value="pending" selected>Pending</option>
+                        <option value="in_progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Row: Deadline & Category -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="taskDeadline" class="form-label">Deadline</label>
+                      <input type="date" class="form-control" id="taskDeadline" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label for="taskCategory" class="form-label">Category</label>
+                      <select class="form-select" id="taskCategory">
+                        <option value="">Select category...</option>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="study">Study</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="health">Health</option>
+                        <option value="others">Others</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Task Type (Checkboxes) -->
+                  <div class="mb-3">
+                    <label class="form-label">Task Type</label>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="typeUrgent" />
+                          <label class="form-check-label" for="typeUrgent">Urgent</label>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="typeImportant" />
+                          <label class="form-check-label" for="typeImportant">Important</label>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="typeRecurring" />
+                          <label class="form-check-label" for="typeRecurring">Recurring</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Reminder (Radio) -->
+                  <div class="mb-3">
+                    <label class="form-label">Reminder</label>
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="reminder" id="noReminder" value="none" checked />
+                        <label class="form-check-label" for="noReminder">No Reminder</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="reminder" id="reminder1day" value="1day" />
+                        <label class="form-check-label" for="reminder1day">1 Day Before</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="reminder" id="reminder1hour" value="1hour" />
+                        <label class="form-check-label" for="reminder1hour">1 Hour Before</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tags -->
+                  <div class="mb-3">
+                    <label for="taskTags" class="form-label">Tags <span class="text-muted">(comma separated)</span></label>
+                    <input type="text" class="form-control" id="taskTags" placeholder="e.g. urgent, meeting, review" />
+                  </div>
+
+                  <!-- Assigned To (Switch) -->
+                  <div class="mb-3">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="assignToMe" checked />
+                      <label class="form-check-label" for="assignToMe">Assign to me</label>
+                    </div>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="d-flex justify-content-end gap-2">
+                    <a href="todo-list.html" class="btn btn-light">Cancel</a>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-primary">
+                      <i class="ph-duotone ph-plus me-1"></i>Add Task
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/plugins/popper.min.js"></script>
+    <script src="../assets/js/plugins/simplebar.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap.min.js"></script>
+    <script src="../assets/js/fonts/custom-font.js"></script>
+    <script src="../assets/js/pcoded.js"></script>
+    <script src="../assets/js/plugins/feather.min.js"></script>
+    <script src="components/load-components.js"></script>
+
+    <script>
+      layout_change('light');
+    </script>
+  </body>
+</html>

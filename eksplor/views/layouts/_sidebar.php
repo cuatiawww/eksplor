@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <!-- [ Sidebar Menu ] start -->
 <nav class="pc-sidebar">
   <div class="navbar-wrapper">
@@ -6,7 +9,7 @@
       <div class="card-body">
         <div class="nav-user-image">
           <a data-bs-toggle="collapse" href="#navuserlink">
-            <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="user-avtar rounded-circle" />
+            <img src="<?= Url::to('@web/assets/images/user/avatar-1.jpg') ?>" alt="user-image" class="user-avtar rounded-circle" />
           </a>
         </div>
         <div class="pc-user-collpsed collapse" id="navuserlink">
@@ -39,8 +42,8 @@
         </li>
         
         <!-- Dashboard -->
-        <li class="pc-item" data-page="index">
-          <a href="index.html" class="pc-link">
+        <li class="pc-item <?= Yii::$app->controller->id == 'site' ? 'active' : '' ?>">
+          <a href="<?= Url::to(['site/index']) ?>" class="pc-link">
             <span class="pc-micon">
               <i class="ph-duotone ph-gauge"></i>
             </span>
@@ -49,7 +52,7 @@
         </li>
         
         <!-- TO-DO LIST dengan Dropdown -->
-        <li class="pc-item pc-hasmenu" data-page="todo-list">
+        <li class="pc-item pc-hasmenu <?= Yii::$app->controller->id == 'task' ? 'active pc-trigger' : '' ?>">
           <a href="#!" class="pc-link">
             <span class="pc-micon">
               <i class="ph-duotone ph-list-checks"></i>
@@ -58,51 +61,21 @@
             <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
           </a>
           <ul class="pc-submenu">
-            <li class="pc-item"><a class="pc-link" href="todo-list.html">Add Task</a></li>
-            <li class="pc-item"><a class="pc-link" href="todo-list.html">Table</a></li>
-          </ul>
-        </li>
-        
-        <!-- DAILY NOTES dengan Dropdown -->
-        <li class="pc-item pc-hasmenu" data-page="daily-notes">
-          <a href="#!" class="pc-link">
-            <span class="pc-micon">
-              <i class="ph-duotone ph-notebook"></i>
-            </span>
-            <span class="pc-mtext">DAILY NOTES</span>
-            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
-          </a>
-          <ul class="pc-submenu">
-            <li class="pc-item"><a class="pc-link" href="daily-notes.html">Write Note</a></li>
-            <li class="pc-item"><a class="pc-link" href="daily-notes.html">All Notes</a></li>
-            <li class="pc-item"><a class="pc-link" href="daily-notes.html">This Week</a></li>
-            <li class="pc-item"><a class="pc-link" href="daily-notes.html">This Month</a></li>
+            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index']) ?>">All Tasks</a></li>
+            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/create']) ?>">Add Task</a></li>
+            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index', 'status' => 'pending']) ?>">Pending</a></li>
+            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index', 'status' => 'completed']) ?>">Completed</a></li>
           </ul>
         </li>
 
-        <!-- Section baru: Archive/Settings -->
+        <!-- Section baru: More -->
         <li class="pc-item pc-caption">
           <label>More</label>
           <i class="ph-duotone ph-folder-open"></i>
           <span>Additional Features</span>
         </li>
 
-        <!-- Archive dengan Dropdown -->
-        <li class="pc-item pc-hasmenu">
-          <a href="#!" class="pc-link">
-            <span class="pc-micon">
-              <i class="ph-duotone ph-archive-box"></i>
-            </span>
-            <span class="pc-mtext">ARCHIVE</span>
-            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
-          </a>
-          <ul class="pc-submenu">
-            <li class="pc-item"><a class="pc-link" href="#!">Archived Tasks</a></li>
-            <li class="pc-item"><a class="pc-link" href="#!">Archived Notes</a></li>
-          </ul>
-        </li>
-
-        <!-- Settings tanpa Dropdown -->
+        <!-- Settings -->
         <li class="pc-item">
           <a href="#!" class="pc-link">
             <span class="pc-micon">

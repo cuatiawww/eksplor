@@ -1,0 +1,107 @@
+<?php
+use yii\helpers\Url;
+?>
+<!-- [ Header Topbar ] start -->
+<header class="pc-header">
+  <div class="header-wrapper">
+    <!-- [Mobile Media Block] start -->
+    <div class="me-auto pc-mob-drp">
+      <ul class="list-unstyled">
+        <!-- ======= Menu collapse Icon ===== -->
+        <li class="pc-h-item pc-sidebar-collapse">
+          <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+            <i class="ph-duotone ph-list"></i>
+          </a>
+        </li>
+        <li class="pc-h-item pc-sidebar-popup">
+          <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+            <i class="ph-duotone ph-list"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- [Mobile Media Block end] -->
+    <div class="ms-auto">
+      <ul class="list-unstyled">
+        <li class="dropdown pc-h-item">
+          
+            class="pc-head-link dropdown-toggle arrow-none me-0"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="false"
+            aria-expanded="false"
+          >
+            <i class="ph-duotone ph-sun-dim"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+            <a href="#!" class="dropdown-item" onclick="layout_change('dark')">
+              <i class="ph-duotone ph-moon"></i>
+              <span>Dark</span>
+            </a>
+            <a href="#!" class="dropdown-item" onclick="layout_change('light')">
+              <i class="ph-duotone ph-sun-dim"></i>
+              <span>Light</span>
+            </a>
+            <a href="#!" class="dropdown-item" onclick="layout_change_default()">
+              <i class="ph-duotone ph-cpu"></i>
+              <span>Default</span>
+            </a>
+          </div>
+        </li>
+        <li class="dropdown pc-h-item header-user-profile">
+          
+            class="pc-head-link dropdown-toggle arrow-none me-0"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="false"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+          >
+            <img src="<?= Url::to('@web/assets/images/user/avatar-1.jpg') ?>" alt="user-image" class="user-avtar" />
+          </a>
+          <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" style="width: 320px;">
+            <div class="dropdown-header d-flex align-items-center justify-content-between">
+              <h5 class="m-0">Hi, Yosua! 👋</h5>
+            </div>
+            <div class="dropdown-body">
+              <div class="profile-notification-scroll position-relative" style="max-height: calc(100vh - 225px)">
+                <!-- Quote Card -->
+                <div class="card mb-0">
+                  <div class="card-body">
+                    <div class="text-center mb-3">
+                      <i class="ph-duotone ph-quotes text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <blockquote class="blockquote mb-0 text-center">
+                      <p class="mb-3" style="font-size: 0.95rem; font-style: italic;">
+                        "Success is not final, failure is not fatal: it is the courage to continue that counts."
+                      </p>
+                      <footer class="blockquote-footer text-end">Winston Churchill</footer>
+                    </blockquote>
+                  </div>
+                </div>
+
+                <hr class="my-3" />
+
+                <!-- Today's Motivation -->
+                <div class="card bg-light-primary mb-0">
+                  <div class="card-body p-3">
+                    <h6 class="mb-2">
+                      <i class="ph-duotone ph-fire me-1"></i>Motivasi Hari Ini
+                    </h6>
+                    <p class="mb-0 small">
+                      Setiap langkah kecil yang kamu ambil hari ini adalah progress menuju kesuksesan.
+                      Keep going and stay consistent! 💪
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- [ Header Topbar ] end -->

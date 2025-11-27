@@ -26,6 +26,7 @@ class TaskController extends Controller
                     'class' => VerbFilter::class,
                     'actions' => [
                         'delete' => ['POST'],
+                        'bulk-delete' => ['POST'],
                     ],
                 ],
             ]
@@ -127,6 +128,34 @@ class TaskController extends Controller
         Yii::$app->session->setFlash('success', 'Task deleted successfully!');
 
         return $this->redirect(['index']);
+    }
+
+    /**
+     * Bulk delete multiple tasks
+     * @return array
+     */
+    public function actionBulkDelete()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $ids = Yii::$app->request->post('ids', []);
+
+        if (empty($ids)) {
+            return [
+                'success' => false,
+                'message' => 'No tasks selected'
+            ];
+        }
+
+        $deletedCount = Task::deleteAll(['id' => $ids]);
+
+        Yii::$app->session->setFlash('success', "$deletedCount task(s) deleted successfully!");
+
+        return [
+            'success' => true,
+            'message' => "$deletedCount task(s) deleted successfully!",
+            'count' => $deletedCount
+        ];
     }
 
     /**

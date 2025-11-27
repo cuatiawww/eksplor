@@ -1,9 +1,6 @@
 <?php
 
-use app\assets\AppAsset;
 use yii\helpers\Html;
-
-AppAsset::register($this);
 
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
@@ -20,14 +17,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <!-- Template CSS -->
-    <!-- Template CSS -->
-<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/tabler-icons.min.css" />
-<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/feather.css" />
-<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/fontawesome.css" />
-<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/material.css" />
-<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/css/style.css" id="main-style-link" />
-<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/css/style-preset.css" />
-<link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/css/custom-theme.css" />
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/tabler-icons.min.css" />
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/feather.css" />
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/fonts/material.css" />
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/css/style.css" id="main-style-link" />
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/template-assets/css/style-preset.css" />
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/css/custom-theme.css" />
+    
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css" />
     
     <?php $this->head() ?>
 </head>
@@ -65,6 +64,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
   </div>
 </div>
 
+<!-- jQuery (required for DataTables and other plugins) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 <script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/popper.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/simplebar.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/bootstrap.min.js"></script>
@@ -72,9 +74,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <script src="<?= Yii::getAlias('@web') ?>/template-assets/js/pcoded.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/template-assets/js/plugins/feather.min.js"></script>
 
-<script>
+<!-- FullCalendar JS -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+
+<!-- <script>
   layout_change('light');
-</script>
+</script> -->
 
 <?php $this->endBody() ?>
 </body>

@@ -21,3 +21,49 @@
 .card.bg-danger-dark {
   background: linear-gradient(135deg, #dc2626 0%, #dc2626 100%) !important;
 }
+
+
+/* Remove underline from all sidebar links */
+.pc-sidebar .pc-navbar .pc-submenu .pc-link {
+  text-decoration: none !important;
+}
+
+.pc-sidebar .pc-navbar .pc-submenu .pc-link:hover {
+  text-decoration: none !important;
+}
+
+/* Remove underline from all links in li */
+.pc-sidebar li a {
+  text-decoration: none !important;
+}
+
+.pc-sidebar li a:hover {
+  text-decoration: none !important;
+}
+
+
+/* Calendar Styling */
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.fc-event {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+.fc-daygrid-event {
+    white-space: normal !important;
+}
+
+.fc .fc-button-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}

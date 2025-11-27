@@ -6,7 +6,12 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 
 $this->title = 'Dashboard';
+$this->registerCssFile('https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css');
+$this->registerJsFile('https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js', ['position' => \yii\web\View::POS_END]);
 ?>
+
+
+
 
 <!-- Breadcrumb -->
 <div class="page-header">
@@ -121,30 +126,36 @@ $this->title = 'Dashboard';
     </div>
   </div>
 
-  <div class="col-md-6 col-xl-3">
-    <div class="card bg-warning-dark dashnum-card text-white overflow-hidden">
-      <span class="round small"></span>
-      <span class="round big"></span>
-      <div class="card-body">
-        <div class="row">
-          <div class="col">
-            <div class="avtar avtar-lg">
-              <i class="ph-duotone ph-notebook text-white f-26"></i>
-            </div>
-          </div>
-          <div class="col-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item">Notes</li>
-            </ul>
+<div class="col-md-6 col-xl-3">
+  <div class="card bg-warning-dark dashnum-card text-white overflow-hidden">
+    <span class="round small"></span>
+    <span class="round big"></span>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <div class="avtar avtar-lg">
+            <i class="ph-duotone ph-notebook text-white f-26"></i>
           </div>
         </div>
-        <span class="d-block f-34 f-w-500 my-2">0</span>
-        <p class="mb-0 opacity-50">
-          <span class="text-white">Coming soon</span>
-        </p>
+        <div class="col-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">Notes</li>
+          </ul>
+        </div>
       </div>
+      <span class="d-block f-34 f-w-500 my-2">
+        <?= \app\models\Notes::find()->count() ?>
+      </span>
+      <p class="mb-0 opacity-50">
+        <span class="text-white">
+          <?= \app\models\Notes::find()
+              ->where(['>=', 'note_date', date('Y-m-d', strtotime('-7 days'))])
+              ->count() ?> new
+        </span> this week
+      </p>
     </div>
   </div>
+</div>
 
   <div class="col-md-6 col-xl-3">
     <div class="card bg-danger-dark dashnum-card text-white overflow-hidden">
@@ -172,28 +183,109 @@ $this->title = 'Dashboard';
       </div>
     </div>
   </div>
-
-  <!-- Quick Actions -->
+   <!-- CALENDAR SECTION - BARU
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h5>Quick Actions</h5>
+        <h5><i class="ph-duotone ph-calendar me-2"></i>Calendar Overview</h5>
       </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-4">
-            <?= Html::a('<i class="ph-duotone ph-plus-circle me-2"></i>Add New Task', ['task/create'], ['class' => 'btn btn-primary w-100 mb-2']) ?>
-          </div>
-          <div class="col-md-4">
-            <?= Html::a('<i class="ph-duotone ph-list-checks me-2"></i>View All Tasks', ['task/index'], ['class' => 'btn btn-success w-100 mb-2']) ?>
-          </div>
-          <div class="col-md-4">
-            <a href="#!" class="btn btn-secondary w-100 mb-2">
-              <i class="ph-duotone ph-calendar me-2"></i>View Calendar
-            </a>
-          </div>
+      <div class="card-body position-relative">
+        <div id="calendar"></div>
+      </div>
+    </div>
+  </div> -->
+
+ <!-- Quick Actions -->
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h5>Quick Actions</h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <?= Html::a('<i class="ph-duotone ph-plus-circle me-2"></i>Add New Task', ['task/create'], ['class' => 'btn btn-primary w-100 mb-2']) ?>
+        </div>
+        <div class="col-md-4">
+          <?= Html::a('<i class="ph-duotone ph-note-pencil me-2"></i>Write Today\'s Note', ['note/create'], ['class' => 'btn btn-warning w-100 mb-2']) ?>
+        </div>
+        <div class="col-md-4">
+          <?= Html::a('<i class="ph-duotone ph-list-checks me-2"></i>View All Tasks', ['task/index'], ['class' => 'btn btn-success w-100 mb-2']) ?>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+<?php
+$calendarUrl = Url::to(['site/calendar-events']);
+$taskCreateUrl = Url::to(['task/create']);
+$noteCreateUrl = Url::to(['note/create']);
+
+$js = <<<JS
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,listMonth'
+        },
+        editable: true,  // Enable drag & drop
+        selectable: true,  // Enable date selection
+        
+        // Load events dari server
+        events: '$calendarUrl',
+        
+        // Klik event untuk lihat detail
+        eventClick: function(info) {
+            var props = info.event.extendedProps;
+            var content = '';
+            
+            if (props.type === 'task') {
+                content += 'TASK DETAILS\\n\\n';
+                content += 'Title: ' + info.event.title + '\\n';
+                content += 'Description: ' + (props.description || '-') + '\\n';
+                content += 'Priority: ' + props.priority.toUpperCase() + '\\n';
+                content += 'Status: ' + props.status + '\\n';
+                content += 'Date: ' + info.event.startStr;
+            } else {
+                content += 'DAILY NOTE\\n\\n';
+                content += 'Title: ' + info.event.title + '\\n';
+                content += 'Mood: ' + (props.mood || '-') + '\\n';
+                content += 'Content: ' + props.content.substring(0, 100) + '...';
+            }
+            
+            alert(content);
+        },
+        
+        // Klik tanggal untuk tambah task baru
+        dateClick: function(info) {
+            if(confirm('Add new task on ' + info.dateStr + '?')) {
+                window.location.href = '$taskCreateUrl' + '?date=' + info.dateStr;
+            }
+        },
+        
+        // Drag & drop untuk reschedule (optional)
+        eventDrop: function(info) {
+            alert('Event moved to: ' + info.event.start.toISOString().split('T')[0]);
+            // TODO: Update database via AJAX
+        },
+        
+        height: 600,
+        
+        // Custom rendering
+        eventContent: function(arg) {
+            let icon = arg.event.extendedProps.type === 'task' ? '✓' : '📝';
+            return { html: '<span>' + icon + ' ' + arg.event.title + '</span>' };
+        }
+    });
+    
+    calendar.render();
+});
+JS;
+
+$this->registerJs($js, \yii\web\View::POS_END);
+?>

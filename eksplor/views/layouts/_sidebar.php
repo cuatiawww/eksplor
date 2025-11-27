@@ -9,7 +9,7 @@ use yii\helpers\Url;
       <div class="card-body">
         <div class="nav-user-image">
           <a data-bs-toggle="collapse" href="#navuserlink">
-            <img src="<?= Url::to('@web/assets/images/user/avatar-1.jpg') ?>" alt="user-image" class="user-avtar rounded-circle" />
+            <img src="<?= Url::to('@web/template-assets/images/user/avatar-1.jpg') ?>" alt="user-image" class="user-avtar rounded-circle" />
           </a>
         </div>
         <div class="pc-user-collpsed collapse" id="navuserlink">
@@ -23,7 +23,7 @@ use yii\helpers\Url;
               </a>
             </li>
             <li>
-              <a class="pc-user-links">
+              <a href="<?= Url::to(['setting/index']) ?>" class="pc-user-links">
                 <i class="ph-duotone ph-gear"></i>
                 <span>Settings</span>
               </a>
@@ -51,22 +51,37 @@ use yii\helpers\Url;
           </a>
         </li>
         
-        <!-- TO-DO LIST dengan Dropdown -->
-        <li class="pc-item pc-hasmenu <?= Yii::$app->controller->id == 'task' ? 'active pc-trigger' : '' ?>">
-          <a href="#!" class="pc-link">
-            <span class="pc-micon">
-              <i class="ph-duotone ph-list-checks"></i>
-            </span>
-            <span class="pc-mtext">TO-DO LIST</span>
-            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
-          </a>
-          <ul class="pc-submenu">
-            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index']) ?>">All Tasks</a></li>
-            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/create']) ?>">Add Task</a></li>
-            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index', 'status' => 'pending']) ?>">Pending</a></li>
-            <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index', 'status' => 'completed']) ?>">Completed</a></li>
-          </ul>
-        </li>
+       <!-- TO-DO LIST dengan Dropdown -->
+<li class="pc-item pc-hasmenu <?= Yii::$app->controller->id == 'task' ? 'active pc-trigger' : '' ?>">
+  <a href="#!" class="pc-link">
+    <span class="pc-micon">
+      <i class="ph-duotone ph-list-checks"></i>
+    </span>
+    <span class="pc-mtext">TO-DO LIST</span>
+    <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+  </a>
+  <ul class="pc-submenu">
+    <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index']) ?>">All Tasks</a></li>
+    <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/create']) ?>">Add Task</a></li>
+    <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index', 'status' => 'pending']) ?>">Pending</a></li>
+    <li class="pc-item"><a class="pc-link" href="<?= Url::to(['task/index', 'status' => 'completed']) ?>">Completed</a></li>
+  </ul>
+</li>
+
+<!-- DAILY NOTES dengan Dropdown - BARU -->
+<li class="pc-item pc-hasmenu <?= Yii::$app->controller->id == 'note' ? 'active pc-trigger' : '' ?>">
+  <a href="#!" class="pc-link">
+    <span class="pc-micon">
+      <i class="ph-duotone ph-notebook"></i>
+    </span>
+    <span class="pc-mtext">DAILY NOTES</span>
+    <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+  </a>
+  <ul class="pc-submenu">
+    <li class="pc-item"><a class="pc-link" href="<?= Url::to(['note/index']) ?>">All Notes</a></li>
+    <li class="pc-item"><a class="pc-link" href="<?= Url::to(['note/create']) ?>">Write Note</a></li>
+  </ul>
+</li>
 
         <!-- Section baru: More -->
         <li class="pc-item pc-caption">
@@ -75,15 +90,15 @@ use yii\helpers\Url;
           <span>Additional Features</span>
         </li>
 
-        <!-- Settings -->
-        <li class="pc-item">
-          <a href="#!" class="pc-link">
-            <span class="pc-micon">
-              <i class="ph-duotone ph-gear"></i>
-            </span>
-            <span class="pc-mtext">SETTINGS</span>
-          </a>
-        </li>
+        <!-- Settings tanpa Dropdown -->
+<li class="pc-item <?= Yii::$app->controller->id == 'setting' ? 'active' : '' ?>">
+  <a href="<?= Url::to(['setting/index']) ?>" class="pc-link">
+    <span class="pc-micon">
+      <i class="ph-duotone ph-gear"></i>
+    </span>
+    <span class="pc-mtext">SETTINGS</span>
+  </a>
+</li>
       </ul>
     </div>
   </div>

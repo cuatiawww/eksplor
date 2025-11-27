@@ -125,4 +125,62 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+public function actionCalendarEvents()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        
+        $events = [];
+        
+        // Get tasks with deadline
+        $tasks = Task::find()->where(['IS NOT', 'deadline', null])->all();
+        foreach ($tasks as $task) {
+            $color = '';
+            switch ($task->priority) {
+                case 'high':
+                    $color = '#dc3545'; // danger/red
+                    break;
+                case 'medium':
+                    $color = '#ffc107'; // warning/yellow
+                    break;
+                case 'low':
+                    $color = '#6c757d'; // secondary/gray
+                    break;
+                default:
+                    $color = '#0d6efd'; // primary/blue
+            }
+            
+            $events[] = [
+                'id' => 'task-' . $task->id,
+                'title' => $task->title,
+                'start' => $task->deadline,
+                'backgroundColor' => $color,
+                'borderColor' => $color,
+                'extendedProps' => [
+                    'type' => 'task',
+                    'description' => $task->description,
+                    'priority' => $task->priority,
+                    'status' => $task->status,
+                ]
+            ];
+        }
+        
+        // Get notes
+        $notes = Note::find()->all();
+        foreach ($notes as $note) {
+            $events[] = [
+                'id' => 'note-' . $note->id,
+                'title' => '📝 ' . ($note->title ?: 'Daily Note'),
+                'start' => $note->note_date,
+                'backgroundColor' => '#0d6efd', // primary/blue
+                'borderColor' => '#0d6efd',
+                'extendedProps' => [
+                    'type' => 'note',
+                    'content' => $note->content,
+                    'mood' => $note->mood,
+                ]
+            ];
+        }
+        
+        return $events;
+    }
 }
